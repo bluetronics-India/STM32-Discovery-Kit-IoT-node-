@@ -109,7 +109,7 @@ float LSM6DSL_acc_Read_OUT_X(I2C_HandleTypeDef i2cHandle) {
 	int outx_h = LSM6DSL_Read8bit(i2cHandle, OUTX_H_XL);
 	
 	int out_x = outx_h<<8 | outx_l;
-	if (out_x > 23768) {
+	if (out_x > 32768) {
 		out_x -= 65536;
 	}
 	
@@ -121,7 +121,7 @@ float LSM6DSL_acc_Read_OUT_Y(I2C_HandleTypeDef i2cHandle) {
 	int outy_h = LSM6DSL_Read8bit(i2cHandle, OUTY_H_XL);
 	
 	int out_y = outy_h<<8 | outy_l;
-	if (out_y > 23768) {
+	if (out_y > 32768) {
 		out_y -= 65536;
 	}
 	
@@ -133,7 +133,7 @@ float LSM6DSL_acc_Read_OUT_Z(I2C_HandleTypeDef i2cHandle) {
 	int outz_h = LSM6DSL_Read8bit(i2cHandle, OUTZ_H_XL);
 	
 	int out_z = outz_h<<8 | outz_l;
-	if (out_z > 23768) {
+	if (out_z > 32768) {
 		out_z -= 65536;
 	}
 	
